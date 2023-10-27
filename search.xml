@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>恭喜你读到这篇博客！祝你一生平安、二人同心、三生有幸、 四季发财、五谷丰登、 六畜兴旺、 七邻友好、八面威风、九久康泰、十全十美、百 思无忧、千般称心、万事顺意!</title>
+      <link href="/c8ab.html"/>
+      <url>/c8ab.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="/images/pasted-7.png" alt="upload successful"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 相册 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 相册 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>You’ll Never Walk Alone</title>
+      <link href="/95e8.html"/>
+      <url>/95e8.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="/images/pasted-8.png" alt="upload successful"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 相册 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 相册 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode500题纪念</title>
+      <link href="/77c0.html"/>
+      <url>/77c0.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="千里之行，始于足下"><a href="#千里之行，始于足下" class="headerlink" title="千里之行，始于足下"></a>千里之行，始于足下</h2><h2 id="力扣500题成就达成！🚀✨🌈"><a href="#力扣500题成就达成！🚀✨🌈" class="headerlink" title="力扣500题成就达成！🚀✨🌈"></a><a href="https://leetcode.cn/">力扣</a>500题成就达成！🚀✨🌈</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 感想 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>滑动窗口+IQ题</title>
+      <link href="/5fe5.html"/>
+      <url>/5fe5.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目如下"><a href="#题目如下" class="headerlink" title="题目如下:"></a>题目如下:</h2><p><a href="https://leetcode.cn/problems/subarrays-with-k-different-integers/description/?envType=list&envId=Z3Wz8smP">https://leetcode.cn/problems/subarrays-with-k-different-integers/description/?envType=list&amp;envId=Z3Wz8smP</a><br><img src="/images/pasted-15.png" alt="upload successful"></p><h3 id="好像是经典的滑动窗口求最小模板题😏"><a href="#好像是经典的滑动窗口求最小模板题😏" class="headerlink" title="好像是经典的滑动窗口求最小模板题😏"></a>好像是经典的滑动窗口求最小模板题😏</h3><p>于是快速写出下面代码</p><pre class=" language-python"><code class="language-python">n <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>res <span class="token operator">=</span> <span class="token number">0</span>left<span class="token punctuation">,</span>right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>window <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span><span class="token keyword">while</span> right <span class="token operator">&lt;</span> n<span class="token punctuation">:</span>    window<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> window<span class="token punctuation">.</span>get<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>    <span class="token keyword">while</span> len<span class="token punctuation">(</span>window<span class="token punctuation">)</span> <span class="token operator">==</span> k<span class="token punctuation">:</span>        res <span class="token operator">+=</span> n <span class="token operator">-</span> right           window<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">-=</span> <span class="token number">1</span>        <span class="token keyword">if</span> window<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>            window<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span>        left <span class="token operator">+=</span> <span class="token number">1</span>    right <span class="token operator">+=</span> <span class="token number">1</span><span class="token keyword">return</span> res</code></pre><h3 id="提交发现出错了！😭"><a href="#提交发现出错了！😭" class="headerlink" title="提交发现出错了！😭"></a>提交发现出错了！😭</h3><p>思考了一下发现应该时res +&#x3D; n - right这一步中出了问题，因为当前子数组满足，后面的不一定满足</p><h3 id="不懂了果断去看题解😤"><a href="#不懂了果断去看题解😤" class="headerlink" title="不懂了果断去看题解😤"></a>不懂了果断去看题解😤</h3><p>最后发现是IQ题</p><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">atMostK</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">:</span>    n <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>    res <span class="token operator">=</span> <span class="token number">0</span>    left<span class="token punctuation">,</span>right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>    succes <span class="token operator">=</span> <span class="token number">0</span>    window <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>    <span class="token keyword">while</span> right <span class="token operator">&lt;</span> n<span class="token punctuation">:</span>        window<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> window<span class="token punctuation">.</span>get<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>        <span class="token keyword">while</span> len<span class="token punctuation">(</span>window<span class="token punctuation">)</span> <span class="token operator">></span> k<span class="token punctuation">:</span>            window<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">-=</span> <span class="token number">1</span>            <span class="token keyword">if</span> window<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>                window<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span>            left <span class="token operator">+=</span> <span class="token number">1</span>        right <span class="token operator">+=</span> <span class="token number">1</span>        res <span class="token operator">+=</span> right <span class="token operator">-</span> left    <span class="token keyword">return</span> res</code></pre><h3 id="我不理解😕"><a href="#我不理解😕" class="headerlink" title="我不理解😕"></a>我不理解😕</h3><p>这是在干什么，怎么和题目不一样，直到看到最后…</p><pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true"># 最多有K个-最多有k-1个 = 刚好有k个</span> <span class="token keyword">return</span> atMostK<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>k<span class="token punctuation">)</span> <span class="token operator">-</span> atMostK<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span></code></pre><h3 id="妙啊！！！🥳😋🤣"><a href="#妙啊！！！🥳😋🤣" class="headerlink" title="妙啊！！！🥳😋🤣"></a>妙啊！！！🥳😋🤣</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> python </tag>
+            
+            <tag> 滑动窗口 </tag>
+            
+            <tag> IQ题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内容汇总</title>
+      <link href="/7f9.html"/>
+      <url>/7f9.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="本人在博客发布的主要内容包括但不限于Python🐍，Java☕，人工智能🤖，算法📝，有趣的项目🎯，希望你读得开心😁-👋🏻-👨🏿‍💻"><a href="#本人在博客发布的主要内容包括但不限于Python🐍，Java☕，人工智能🤖，算法📝，有趣的项目🎯，希望你读得开心😁-👋🏻-👨🏿‍💻" class="headerlink" title="本人在博客发布的主要内容包括但不限于Python🐍，Java☕，人工智能🤖，算法📝，有趣的项目🎯，希望你读得开心😁 👋🏻 👨🏿‍💻"></a>本人在博客发布的主要内容包括但不限于Python🐍，Java☕，人工智能🤖，算法📝，有趣的项目🎯，希望你读得开心😁 👋🏻 👨🏿‍💻</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> 汇总 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> Java </tag>
+            
+            <tag> 人工智能 </tag>
+            
+            <tag> 项目 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/3eeb.html"/>
+      <url>/3eeb.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
