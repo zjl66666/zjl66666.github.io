@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>并查集</title>
+      <link href="/f171.html"/>
+      <url>/f171.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目如下"><a href="#题目如下" class="headerlink" title="题目如下"></a>题目如下</h2><p>有 n 个城市，其中一些彼此相连，另一些没有相连。如果城市a与城市 b直接相连，且城市b与城市c直接相连，那么城市 a 与城市 c 间接相连。省份是一组直接或间接相连的城市，组内不含其他没有相连的城市。给你一个n*n的矩阵isConnected ，其中isConnected[i][j]&#x3D;1表示第i个城市和第 j 个城市直接相连，而isConnected[i][j]&#x3D;0 表示二者不直接相连。返回矩阵中省份的数量。</p><h3 id="常见的dfs做法如下"><a href="#常见的dfs做法如下" class="headerlink" title="常见的dfs做法如下"></a>常见的dfs做法如下</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">findCircleNum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> isConnected<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token keyword">for</span> y <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>                <span class="token keyword">if</span> isConnected<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">and</span> <span class="token operator">not</span> y <span class="token keyword">in</span> visited<span class="token punctuation">:</span>                    visited<span class="token punctuation">.</span>add<span class="token punctuation">(</span>y<span class="token punctuation">)</span>                    dfs<span class="token punctuation">(</span>y<span class="token punctuation">)</span>        n <span class="token operator">=</span> len<span class="token punctuation">(</span>isConnected<span class="token punctuation">)</span>        visited <span class="token operator">=</span> set<span class="token punctuation">(</span><span class="token punctuation">)</span>        res <span class="token operator">=</span> <span class="token number">0</span>        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token keyword">if</span> i <span class="token operator">not</span> <span class="token keyword">in</span> visited<span class="token punctuation">:</span>                dfs<span class="token punctuation">(</span>i<span class="token punctuation">)</span>                res <span class="token operator">+=</span> <span class="token number">1</span>        <span class="token keyword">return</span> res</code></pre><h3 id="并查集做法如下"><a href="#并查集做法如下" class="headerlink" title="并查集做法如下"></a>并查集做法如下</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">findCircleNum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> isConnected<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>        <span class="token comment" spellcheck="true"># 并查集</span>        n <span class="token operator">=</span> len<span class="token punctuation">(</span>isConnected<span class="token punctuation">)</span>        parent <span class="token operator">=</span> list<span class="token punctuation">(</span>range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># 寻找属于哪一个联通分块</span>        <span class="token keyword">def</span> <span class="token function">find</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token comment" spellcheck="true"># 不断寻找自身的上级，即属于哪一个联通分块(寻找帮主)</span>            <span class="token keyword">if</span> parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> i<span class="token punctuation">:</span>                parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> find<span class="token punctuation">(</span>parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>              <span class="token keyword">return</span> parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span>        <span class="token keyword">def</span> <span class="token function">union</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token comment" spellcheck="true"># 合并到联通分块,这里将i联通到j，(将i的帮主设为j的帮主)</span>            parent<span class="token punctuation">[</span>find<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> find<span class="token punctuation">(</span>j<span class="token punctuation">)</span>                   <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>                <span class="token keyword">if</span> isConnected<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>                    union<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># parent[i] == i(即i为帮主，联通分块的老大)</span>        provinces <span class="token operator">=</span> sum<span class="token punctuation">(</span>parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> i <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>         <span class="token keyword">return</span> provinces        </code></pre><h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><p>定义：是一种树型的数据结构，用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。比如说，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。</p><p>主要构成：<br>要由一个整型数组parent[ ]和两个函数find( )、union( )构成。<br>其中数组 parent[ ] 记录了每个点的前驱节点是谁，函数 find(x) 用于查找指定节点 x 属于哪个集合，函数 union(x,y) 用于合并两个节点 x 和 y 。</p><p>作用：<br>主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大子图各自全部可达，则此图的连通分支数为2……）</p><ul><li><a href="https://blog.csdn.net/the_ZED/article/details/105126583?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169957474216777224413146%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169957474216777224413146&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-105126583-null-null.142%5Ev96%5Epc_search_result_base4&utm_term=%E5%B9%B6%E6%9F%A5%E9%9B%86&spm=1018.2226.3001.4187">相关资料</a>           </li><li><a href="https://leetcode.cn/problems/bLyHh0/">题目链接</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 力扣 </tag>
+            
+            <tag> 并查集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>大数据是不会骗人的，当你读到这篇博客的时候，在接下来的日子里，你会运气爆棚🥰，财源滚滚💰，身体健康💪，一切都会越来越好👍，许下的心愿都能实现✨！</title>
       <link href="/c8ab.html"/>
       <url>/c8ab.html</url>
@@ -104,6 +131,27 @@
             <tag> 滑动窗口 </tag>
             
             <tag> IQ题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PyCharm快捷键</title>
+      <link href="/4493.html"/>
+      <url>/4493.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><pre class=" language-python"><code class="language-python">  alt<span class="token operator">+</span><span class="token number">1</span>：打开或隐藏工程目录  shift<span class="token operator">+</span>f10：运行  shift<span class="token operator">+</span>f9：调试  alt<span class="token operator">+</span>enter：解决方案  shift<span class="token operator">+</span>shift：搜索</code></pre><h2 id="编辑器基础知识"><a href="#编辑器基础知识" class="headerlink" title="编辑器基础知识"></a>编辑器基础知识</h2><pre class=" language-python"><code class="language-python">  ctrl<span class="token operator">+</span>D：复制当前行  ctrl<span class="token operator">+</span>W：选中当前单词<span class="token punctuation">,</span>连续按会选中更大范围  ctrl <span class="token operator">-</span>：收起代码块，再加shift收起全部  ctrl <span class="token operator">=</span>：展开代码块  ctrl<span class="token operator">+</span>alt<span class="token operator">+</span>T：包围代码块如<span class="token keyword">if</span>，<span class="token keyword">try</span>等  ctrl<span class="token operator">+</span>R：替换</code></pre><h2 id="代码辅助"><a href="#代码辅助" class="headerlink" title="代码辅助"></a>代码辅助</h2><pre class=" language-python"><code class="language-python">  ctrl<span class="token operator">+</span>alt<span class="token operator">+</span>L：格式化代码  ctrl<span class="token operator">+</span>alt<span class="token operator">+</span>shift<span class="token operator">+</span>L：优化导入等  ctrl<span class="token operator">+</span>P：原地查看方法签名  ctrl<span class="token operator">+</span>shift<span class="token operator">+</span>f7：高亮显示所有该单词</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> PyCharm </tag>
+            
+            <tag> 效率 </tag>
             
         </tags>
       
