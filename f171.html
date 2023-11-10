@@ -5,7 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="并查集, python,java,人工智能，后端开发">
-    <meta name="description" content="题目如下有 n 个城市，其中一些彼此相连，另一些没有相连。如果城市a与城市 b直接相连，且城市b与城市c直接相连，那么城市 a 与城市 c 间接相连。省份是一组直接或间接相连的城市，组内不含其他没有相连的城市。给你一个n*n的矩阵isCon">
+    <meta name="description" content="题目如下
+常见的dfs做法如下class Solution:
+    def findCircleNum(self, isConnected: List[List[int]]) -&gt; int:
+        def dfs(x):
+   ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -460,14 +464,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    596
+                    450
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -487,7 +491,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="题目如下"><a href="#题目如下" class="headerlink" title="题目如下"></a>题目如下</h2><p>有 n 个城市，其中一些彼此相连，另一些没有相连。如果城市a与城市 b直接相连，且城市b与城市c直接相连，那么城市 a 与城市 c 间接相连。省份是一组直接或间接相连的城市，组内不含其他没有相连的城市。给你一个n*n的矩阵isConnected ，其中isConnected[i][j]&#x3D;1表示第i个城市和第 j 个城市直接相连，而isConnected[i][j]&#x3D;0 表示二者不直接相连。返回矩阵中省份的数量。</p>
+                <h2 id="题目如下"><a href="#题目如下" class="headerlink" title="题目如下"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/bLyHh0/">题目</a>如下</h2><p><img src="loading.gif" data-original="/images/pasted-16.png" alt="upload successful"></p>
 <h3 id="常见的dfs做法如下"><a href="#常见的dfs做法如下" class="headerlink" title="常见的dfs做法如下"></a>常见的dfs做法如下</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">findCircleNum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> isConnected<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
         <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -533,8 +537,7 @@
 <p>主要构成：<br>要由一个整型数组parent[ ]和两个函数find( )、union( )构成。<br>其中数组 parent[ ] 记录了每个点的前驱节点是谁，函数 find(x) 用于查找指定节点 x 属于哪个集合，函数 union(x,y) 用于合并两个节点 x 和 y 。</p>
 <p>作用：<br>主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大子图各自全部可达，则此图的连通分支数为2……）</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/the_ZED/article/details/105126583?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169957474216777224413146%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169957474216777224413146&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-105126583-null-null.142%5Ev96%5Epc_search_result_base4&utm_term=%E5%B9%B6%E6%9F%A5%E9%9B%86&spm=1018.2226.3001.4187">相关资料</a>           </li>
-<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/bLyHh0/">题目链接</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/the_ZED/article/details/105126583?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169957474216777224413146%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169957474216777224413146&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-105126583-null-null.142%5Ev96%5Epc_search_result_base4&utm_term=%E5%B9%B6%E6%9F%A5%E9%9B%86&spm=1018.2226.3001.4187">相关文章</a></li>
 </ul>
 
                 
@@ -1151,7 +1154,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.1k</span>
+                        class="white-color">974</span>
             
             
             
@@ -1477,7 +1480,7 @@ $(function () {
     <script src="https://cdn.jsdelivr.net/gh/zjl66666/BlogSource/libs/instantpage/instantpage.js" type="module"></script>
     
 
-
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":240,"height":240},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script>
         <style>
             [bg-lazy] {
                 background-image: none !important;
@@ -1490,6 +1493,6 @@ $(function () {
                 preloadRatio: 2,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":240,"height":240},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 
 </html>
